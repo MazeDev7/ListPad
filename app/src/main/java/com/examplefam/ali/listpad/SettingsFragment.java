@@ -28,7 +28,6 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
 
             CheckBoxPreference checkBoxPreference = (CheckBoxPreference)findPreference(preferenceKeys.night_mode_pref_key);
             if(checkBoxPreference.isChecked()){
-                //Comment out this line if not using Google Analytics
                 app.send(this, "Settings", "Night Mode used");
                 themeEditor.putString(MainActivity.THEME_SAVED, MainActivity.DARKTHEME);
             }

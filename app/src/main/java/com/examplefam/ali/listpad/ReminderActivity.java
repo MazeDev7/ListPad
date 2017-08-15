@@ -74,8 +74,6 @@ public class ReminderActivity extends AppCompatActivity{
         mtoDoTextTextView = (TextView)findViewById(R.id.toDoReminderTextViewBody);
         mSnoozeTextView = (TextView)findViewById(R.id.reminderViewSnoozeTextView);
         mSnoozeSpinner = (MaterialSpinner)findViewById(R.id.todoReminderSnoozeSpinner);
-
-//        mtoDoTextTextView.setBackgroundColor(item.getTodoColor());
         mtoDoTextTextView.setText(mItem.getToDoText());
 
         if(theme.equals(MainActivity.LIGHTTHEME)){
@@ -96,18 +94,14 @@ public class ReminderActivity extends AppCompatActivity{
                 changeOccurred();
                 saveData();
                 closeApp();
-//                finish();
             }
         });
 
 
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, snoozeOptionsArray);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_text_view, snoozeOptionsArray);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
         mSnoozeSpinner.setAdapter(adapter);
-//        mSnoozeSpinner.setSelection(0);
 
     }
 
@@ -175,16 +169,6 @@ public class ReminderActivity extends AppCompatActivity{
         }
     }
 
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        try{
-//            storeRetrieveData.saveToFile(mToDoItems);
-//        }
-//        catch (JSONException | IOException e){
-//            e.printStackTrace();
-//        }
-//    }
 
     private void saveData(){
         try{
@@ -198,11 +182,5 @@ public class ReminderActivity extends AppCompatActivity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        try{
-//            storeRetrieveData.saveToFile(mToDoItems);
-//        }
-//        catch (JSONException | IOException e){
-//            e.printStackTrace();
-//        }
     }
 }

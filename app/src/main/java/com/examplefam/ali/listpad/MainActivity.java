@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 app.send(this, "Action", "FAB pressed");
-                Intent newTodo = new Intent(MainActivity.this, AddToDoActivity.class);
+                Intent newTodo = new Intent(MainActivity.this, AddReminderActivity.class);
                 ToDoItem item = new ToDoItem("", false, null);
                 int color = ColorGenerator.MATERIAL.getRandomColor();
                 item.setTodoColor(color);
@@ -417,10 +417,10 @@ public class MainActivity extends AppCompatActivity {
             if(item.getToDoDate()!=null){
                 String timeToShow;
                 if(android.text.format.DateFormat.is24HourFormat(MainActivity.this)){
-                    timeToShow = AddToDoActivity.formatDate(MainActivity.DATE_TIME_FORMAT_24_HOUR, item.getToDoDate());
+                    timeToShow = AddReminderActivity.formatDate(MainActivity.DATE_TIME_FORMAT_24_HOUR, item.getToDoDate());
                 }
                 else{
-                    timeToShow = AddToDoActivity.formatDate(MainActivity.DATE_TIME_FORMAT_12_HOUR, item.getToDoDate());
+                    timeToShow = AddReminderActivity.formatDate(MainActivity.DATE_TIME_FORMAT_12_HOUR, item.getToDoDate());
                 }
                 holder.mTimeTextView.setText(timeToShow);
             }
@@ -454,7 +454,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         ToDoItem item = items.get(ViewHolder.this.getAdapterPosition());
-                        Intent i = new Intent(MainActivity.this, AddToDoActivity.class);
+                        Intent i = new Intent(MainActivity.this, AddReminderActivity.class);
                         i.putExtra(TODOITEM, item);
                         startActivityForResult(i, REQUEST_ID_TODO_ITEM);
                     }

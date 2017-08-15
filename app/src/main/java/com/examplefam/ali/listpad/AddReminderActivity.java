@@ -34,7 +34,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AddToDoActivity extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
+public class AddReminderActivity extends AppCompatActivity implements  DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener{
     private Date mLastEdited;
     private EditText mToDoTextBodyEditText;
     private SwitchCompat mToDoDateSwitch;
@@ -92,7 +92,6 @@ public class AddToDoActivity extends AppCompatActivity implements  DatePickerDia
         }
 
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_add_to_do);
         //Testing out a new layout
         setContentView(R.layout.activity_todo_test);
 
@@ -251,7 +250,7 @@ public class AddToDoActivity extends AppCompatActivity implements  DatePickerDia
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
 
 
-                DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(AddToDoActivity.this, year, month, day);
+                DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(AddReminderActivity.this, year, month, day);
                 if(theme.equals(MainActivity.DARKTHEME)){
                     datePickerDialog.setThemeDark(true);
                 }
@@ -279,7 +278,7 @@ public class AddToDoActivity extends AppCompatActivity implements  DatePickerDia
                 int hour = calendar.get(Calendar.HOUR_OF_DAY);
                 int minute = calendar.get(Calendar.MINUTE);
 
-                TimePickerDialog timePickerDialog = TimePickerDialog.newInstance(AddToDoActivity.this, hour, minute, DateFormat.is24HourFormat(AddToDoActivity.this));
+                TimePickerDialog timePickerDialog = TimePickerDialog.newInstance(AddReminderActivity.this, hour, minute, DateFormat.is24HourFormat(AddReminderActivity.this));
                 if(theme.equals(MainActivity.DARKTHEME)){
                     timePickerDialog.setThemeDark(true);
                 }
@@ -287,13 +286,7 @@ public class AddToDoActivity extends AppCompatActivity implements  DatePickerDia
             }
         });
 
-//        mDefaultTimeOptions12H = new String[]{"9:00 AM", "12:00 PM", "3:00 PM", "6:00 PM", "9:00 PM", "12:00 AM"};
-//        mDefaultTimeOptions24H = new String[]{"9:00", "12:00", "15:00", "18:00", "21:00", "24:00"};
         setDateAndTimeEditText();
-
-//
-
-//
 
     }
 
@@ -316,7 +309,7 @@ public class AddToDoActivity extends AppCompatActivity implements  DatePickerDia
         }
         else{
             mDateEditText.setText(getString(R.string.date_reminder_default));
-//            mUserReminderDate = new Date();
+
             boolean time24 = DateFormat.is24HourFormat(this);
             Calendar cal = Calendar.getInstance();
             if(time24){
@@ -348,7 +341,6 @@ public class AddToDoActivity extends AppCompatActivity implements  DatePickerDia
         InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(et.getWindowToken(), 0);
     }
-
 
 
     public void setDate(int year, int month, int day){
@@ -399,7 +391,6 @@ public class AddToDoActivity extends AppCompatActivity implements  DatePickerDia
         mUserReminderDate = calendar.getTime();
 
         setReminderTextView();
-//        setDateAndTimeEditText();
         setTimeEditText();
     }
 
@@ -461,7 +452,6 @@ public class AddToDoActivity extends AppCompatActivity implements  DatePickerDia
         else{
             mUserToDoItem.setToDoText(mUserEnteredText);
         }
-//        mUserToDoItem.setLastEdited(mLastEdited);
         if(mUserReminderDate!=null){
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(mUserReminderDate);
