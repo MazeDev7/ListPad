@@ -85,7 +85,7 @@ public class AddReminderActivity extends AppCompatActivity implements  DatePicke
         theme = getSharedPreferences(MainActivity.THEME_PREFERENCES, MODE_PRIVATE).getString(MainActivity.THEME_SAVED, MainActivity.LIGHTTHEME);
         if(theme.equals(MainActivity.LIGHTTHEME)){
             setTheme(R.style.CustomStyle_LightTheme);
-            Log.d("OskarSchindler", "Light Theme");
+            Log.d("AliM", "Light Theme");
         }
         else{
             setTheme(R.style.CustomStyle_DarkTheme);
@@ -320,7 +320,7 @@ public class AddReminderActivity extends AppCompatActivity implements  DatePicke
             }
             cal.set(Calendar.MINUTE, 0);
             mUserReminderDate = cal.getTime();
-            Log.d("OskarSchindler", "Imagined Date: "+mUserReminderDate);
+            Log.d("AliM", "Imagined Date: "+mUserReminderDate);
             String timeString;
             if(time24){
                 timeString = formatDate("k:mm", mUserReminderDate);
@@ -386,7 +386,7 @@ public class AddReminderActivity extends AppCompatActivity implements  DatePicke
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
-        Log.d("OskarSchindler", "Time set: "+hour);
+        Log.d("AliM", "Time set: "+hour);
         calendar.set(year, month, day, hour, minute, 0);
         mUserReminderDate = calendar.getTime();
 
@@ -415,7 +415,7 @@ public class AddReminderActivity extends AppCompatActivity implements  DatePicke
         if(mUserReminderDate!=null){
             mReminderTextView.setVisibility(View.VISIBLE);
             if(mUserReminderDate.before(new Date())){
-                Log.d("OskarSchindler", "DATE is "+mUserReminderDate);
+                Log.d("AliM", "DATE is "+mUserReminderDate);
                 mReminderTextView.setText(getString(R.string.date_error_check_again));
                 mReminderTextView.setTextColor(Color.RED);
                 return;

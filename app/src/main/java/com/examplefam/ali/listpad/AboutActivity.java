@@ -30,11 +30,11 @@ public class AboutActivity extends AppCompatActivity {
 
         theme = getSharedPreferences(MainActivity.THEME_PREFERENCES, MODE_PRIVATE).getString(MainActivity.THEME_SAVED, MainActivity.LIGHTTHEME);
         if(theme.equals(MainActivity.DARKTHEME)){
-            Log.d("OskarSchindler", "One");
+            Log.d("AliM", "One");
             setTheme(R.style.CustomStyle_DarkTheme);
         }
         else{
-            Log.d("OskarSchindler", "One");
+            Log.d("AliM", "One");
             setTheme(R.style.CustomStyle_LightTheme);
         }
 

@@ -158,7 +158,7 @@ public class ReminderActivity extends AppCompatActivity{
                 Date date = addTimeToDate(valueFromSpinner());
                 mItem.setToDoDate(date);
                 mItem.setHasReminder(true);
-                Log.d("OskarSchindler", "Date Changed to: " + date);
+                Log.d("AliM", "Date Changed to: " + date);
                 changeOccurred();
                 saveData();
                 closeApp();

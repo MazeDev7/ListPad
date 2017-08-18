@@ -25,7 +25,7 @@ public class TodoNotificationService extends IntentService {
         mTodoText = intent.getStringExtra(TODOTEXT);
         mTodoUUID = (UUID)intent.getSerializableExtra(TODOUUID);
 
-        Log.d("OskarSchindler", "onHandleIntent called");
+        Log.d("AliM", "onHandleIntent called");
         NotificationManager manager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         Intent i = new Intent(this, ReminderActivity.class);
         i.putExtra(TodoNotificationService.TODOUUID, mTodoUUID);

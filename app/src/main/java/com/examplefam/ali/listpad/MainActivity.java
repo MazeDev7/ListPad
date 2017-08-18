@@ -310,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
             PendingIntent pi = PendingIntent.getService(this, requestCode,i, PendingIntent.FLAG_NO_CREATE);
             pi.cancel();
             getAlarmManager().cancel(pi);
-            Log.d("OskarSchindler", "PI Cancelled " + doesPendingIntentExist(i, requestCode));
+            Log.d("AliM", "PI Cancelled " + doesPendingIntentExist(i, requestCode));
         }
     }
 
